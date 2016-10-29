@@ -1,6 +1,6 @@
-package cz.fit.dpo.mvcshooter;
+package cz.fit.adp.mvcshooter;
 
-import cz.fit.dpo.mvcshooter.view.MainWindow;
+import cz.fit.adp.mvcshooter.view.MainWindow;
 import javax.swing.SwingUtilities;
 
 /**

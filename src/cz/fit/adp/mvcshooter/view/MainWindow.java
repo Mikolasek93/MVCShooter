@@ -1,4 +1,4 @@
-package cz.fit.dpo.mvcshooter.view;
+package cz.fit.adp.mvcshooter.view;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;

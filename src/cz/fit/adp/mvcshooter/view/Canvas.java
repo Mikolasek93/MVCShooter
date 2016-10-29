@@ -1,6 +1,6 @@
-package cz.fit.dpo.mvcshooter.view;
+package cz.fit.adp.mvcshooter.view;
 
-import cz.fit.dpo.mvcshooter.model.Cannon;
+import cz.fit.adp.mvcshooter.model.Cannon;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;

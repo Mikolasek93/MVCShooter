@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cz.fit.dpo.mvcshooter.model;
+package cz.fit.adp.mvcshooter.model;
 
 /**
- *
+ * Trida pro projektily
  * @author Mikolasek
  */
-public class Enemy extends GameObject{
+public class Bullet extends GameObject{
     
 }
