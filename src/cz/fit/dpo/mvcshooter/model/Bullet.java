@@ -6,7 +6,7 @@
 package cz.fit.dpo.mvcshooter.model;
 
 /**
- *
+ * Trida pro projektily
  * @author Mikolasek
  */
 public class Bullet extends GameObject{

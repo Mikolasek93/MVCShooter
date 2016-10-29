@@ -11,4 +11,11 @@ package cz.fit.dpo.mvcshooter.model;
  */
 public class GameObject {
     
+    /*
+    Object map position
+    */
+    private int x;
+    private int y;
+    
+    
 }
