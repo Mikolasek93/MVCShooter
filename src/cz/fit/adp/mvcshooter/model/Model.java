@@ -10,5 +10,20 @@ package cz.fit.adp.mvcshooter.model;
  * @author Mikolasek
  */
 public class Model {
+    Cannon cannon;
+    
+    
+    public Model(){
+        cannon = new Cannon();
+    }
+
+    public Cannon getCannon() {
+        return cannon;
+    }
+
+    public void setCannon(Cannon cannon) {
+        this.cannon = cannon;
+    }
+    
     
 }

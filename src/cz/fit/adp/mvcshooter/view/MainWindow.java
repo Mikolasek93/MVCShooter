@@ -1,5 +1,7 @@
 package cz.fit.adp.mvcshooter.view;
 
+import cz.fit.adp.mvcshooter.controller.InputHandler;
+import cz.fit.adp.mvcshooter.model.Model;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.KeyAdapter;
@@ -15,6 +17,8 @@ public class MainWindow extends JFrame {
 
 
     public MainWindow() {
+        Model model = new Model();
+        
         try {
             Canvas view = new Canvas(0, 0, 500, 500);
 
@@ -27,13 +31,7 @@ public class MainWindow extends JFrame {
                   (int) (obrazovka.getWidth() / 2 - 250),
                   (int) (obrazovka.getHeight() / 2 - 250));
 
-            this.addKeyListener(new KeyAdapter() {
-                @Override
-                public void keyPressed(KeyEvent evt) {
-                    // delegate to controller
-                    System.out.println("key pressed: " + evt.getKeyChar());
-                }
-            });
+            this.addKeyListener(new InputHandler(model));
 
             this.add(view);
             this.pack();

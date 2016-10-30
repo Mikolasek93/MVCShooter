@@ -6,6 +6,7 @@
 package cz.fit.adp.mvcshooter.controller;
 
 import cz.fit.adp.mvcshooter.model.Cannon;
+import cz.fit.adp.mvcshooter.model.MoveState;
 
 /**
  *
@@ -19,7 +20,7 @@ public class MoveDownCommand extends CannonCommand {
 
     @Override
     public void execute() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        cannon.setMoveState(MoveState.MOVING_DOWN);
     }
 
 }

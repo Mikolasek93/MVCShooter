@@ -12,15 +12,14 @@ import cz.fit.adp.mvcshooter.model.MoveState;
  *
  * @author Mikolasek
  */
-public class MoveUpCommand extends CannonCommand {
+public class StopCommand extends CannonCommand{
 
-    public MoveUpCommand(Cannon cannon) {
+    public StopCommand(Cannon cannon) {
         super(cannon);
     }
 
     @Override
     public void execute() {
-        cannon.setMoveState(MoveState.MOVING_UP);
+        cannon.setMoveState(MoveState.STOPPED);
     }
-
 }
