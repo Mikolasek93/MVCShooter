@@ -5,11 +5,17 @@
  */
 package cz.fit.adp.mvcshooter.controller;
 
+import cz.fit.adp.mvcshooter.model.Cannon;
+
 /**
  *
  * @author Mikolasek
  */
-public class MoveDownCommand extends Command {
+public class MoveDownCommand extends CannonCommand {
+
+    public MoveDownCommand(Cannon cannon) {
+        super(cannon);
+    }
 
     @Override
     public void execute() {

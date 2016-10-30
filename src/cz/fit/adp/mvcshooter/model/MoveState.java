@@ -6,8 +6,11 @@
 package cz.fit.adp.mvcshooter.model;
 
 /**
- * Trida pro projektily
+ *
  * @author Mikolasek
  */
-public class Bullet extends GameObject{
+public enum MoveState {
+    MOVING_UP,
+    MOVING_DOWN,
+    STOPPED
 }

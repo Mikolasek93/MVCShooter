@@ -5,15 +5,21 @@
  */
 package cz.fit.adp.mvcshooter.controller;
 
+import cz.fit.adp.mvcshooter.model.Cannon;
+
 /**
  *
  * @author Mikolasek
  */
-public class SwitchCannonStateCommand extends Command {
+public class SwitchCannonStateCommand extends CannonCommand {
+
+    public SwitchCannonStateCommand(Cannon cannon) {
+        super(cannon);
+    }
 
     @Override
     public void execute() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        cannon.switchShootingState();
     }
     
 }

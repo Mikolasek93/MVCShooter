@@ -5,7 +5,6 @@
  */
 package cz.fit.adp.mvcshooter.model;
 
-import cz.fit.adp.mvcshooter.view.GraphicsModel;
 import java.util.Observable;
 
 
@@ -21,9 +20,7 @@ public abstract class GameObject extends Observable{
     private int y;
     private int width;
     private int height;
-    
-    public abstract void move();
-    
+       
     public int getX() {
         return x;
     }

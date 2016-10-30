@@ -5,10 +5,19 @@
  */
 package cz.fit.adp.mvcshooter.controller;
 
+import cz.fit.adp.mvcshooter.model.Cannon;
+
 /**
  *
  * @author Mikolasek
  */
-public abstract class Command {
+public abstract class CannonCommand {
+
+    Cannon cannon;
+    
+    public CannonCommand(Cannon cannon){
+        this.cannon = cannon;
+    }
+    
     public abstract void execute();
 }
