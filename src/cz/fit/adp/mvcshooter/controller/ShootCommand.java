@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cz.fit.adp.mvcshooter.model;
+package cz.fit.adp.mvcshooter.controller;
 
 /**
- * Trida pro projektily
+ *
  * @author Mikolasek
  */
-public class Bullet extends GameObject{
+public class ShootCommand extends Command {
 
     @Override
-    public void move() {
+    public void execute() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

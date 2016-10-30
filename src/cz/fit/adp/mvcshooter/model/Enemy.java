@@ -10,5 +10,10 @@ package cz.fit.adp.mvcshooter.model;
  * @author Mikolasek
  */
 public class Enemy extends GameObject{
+
+    @Override
+    public void move() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

@@ -12,10 +12,5 @@ import java.util.Observer;
  * @author Mikolasek
  */
 public abstract class GameObjectView implements Observer{
-
-    public static void GameObjectView(){
-        
-        
-    }
     
 }

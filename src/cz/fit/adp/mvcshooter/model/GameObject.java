@@ -13,7 +13,7 @@ import java.util.Observable;
  *
  * @author Mikolasek
  */
-public class GameObject extends Observable{
+public abstract class GameObject extends Observable{
     /*
     Object map position and size
     */
@@ -22,6 +22,7 @@ public class GameObject extends Observable{
     private int width;
     private int height;
     
+    public abstract void move();
     
     public int getX() {
         return x;
