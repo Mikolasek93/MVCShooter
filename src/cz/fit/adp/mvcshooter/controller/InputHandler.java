@@ -5,7 +5,13 @@
  */
 package cz.fit.adp.mvcshooter.controller;
 
-import cz.fit.adp.mvcshooter.model.Cannon;
+import cz.fit.adp.mvcshooter.controller.command.SwitchCannonStateCommand;
+import cz.fit.adp.mvcshooter.controller.command.ShootCommand;
+import cz.fit.adp.mvcshooter.controller.command.StopCommand;
+import cz.fit.adp.mvcshooter.controller.command.MoveUpCommand;
+import cz.fit.adp.mvcshooter.controller.command.MoveDownCommand;
+import cz.fit.adp.mvcshooter.controller.command.CannonCommand;
+import cz.fit.adp.mvcshooter.model.gameobjects.Cannon;
 import cz.fit.adp.mvcshooter.model.Model;
 import java.awt.event.KeyEvent;
 import static java.awt.event.KeyEvent.*;

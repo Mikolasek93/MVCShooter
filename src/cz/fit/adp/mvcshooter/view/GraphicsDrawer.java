@@ -1,6 +1,6 @@
 package cz.fit.adp.mvcshooter.view;
 
-import cz.fit.adp.mvcshooter.model.Cannon;
+import cz.fit.adp.mvcshooter.model.gameobjects.Cannon;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;

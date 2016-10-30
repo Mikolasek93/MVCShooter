@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cz.fit.adp.mvcshooter.model;
+package cz.fit.adp.mvcshooter.model.gameobjects;
 
 import java.util.Observable;
 
@@ -16,10 +16,10 @@ public abstract class GameObject extends Observable{
     /*
     Object map position and size
     */
-    private int x;
-    private int y;
-    private int width;
-    private int height;
+    protected int x;
+    protected int y;
+    protected int width;
+    protected int height;
        
     public int getX() {
         return x;

@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cz.fit.adp.mvcshooter.controller;
-
-import cz.fit.adp.mvcshooter.model.Cannon;
-import cz.fit.adp.mvcshooter.model.MoveState;
+package cz.fit.adp.mvcshooter.controller.command;
+import cz.fit.adp.mvcshooter.model.gameobjects.Cannon;
+import cz.fit.adp.mvcshooter.model.gameobjects.MoveState;
 
 /**
  *

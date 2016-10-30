@@ -14,7 +14,10 @@ public class Shooter {
 
             @Override
             public void run() {
-               new MainWindow().setVisible(true);
+               MainWindow testWindow = new MainWindow();
+                testWindow.setVisible(true);
+                
+                testWindow.repaint();
             }
         });
     }

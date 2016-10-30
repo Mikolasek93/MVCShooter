@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cz.fit.adp.mvcshooter.model;
+package cz.fit.adp.mvcshooter.model.gameobjects;
 
 /**
- *
+ * Trida pro projektily
  * @author Mikolasek
  */
-public class PhysicsComponent {
-    
+public class Bullet extends GameObject{
 }

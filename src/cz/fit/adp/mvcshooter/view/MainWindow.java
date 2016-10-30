@@ -20,7 +20,7 @@ public class MainWindow extends JFrame {
         Model model = new Model();
         
         try {
-            Canvas view = new Canvas(0, 0, 500, 500);
+            Canvas view = new Canvas(0, 0, 500, 500, model.getCannon());
 
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             this.setTitle("MyShooter");
@@ -35,6 +35,9 @@ public class MainWindow extends JFrame {
 
             this.add(view);
             this.pack();
+            
+            
+            
         } catch (Exception ex) {
             ex.printStackTrace(System.err);
         }
