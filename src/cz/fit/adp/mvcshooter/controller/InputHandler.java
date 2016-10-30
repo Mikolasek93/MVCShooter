@@ -23,19 +23,19 @@ import java.awt.event.KeyListener;
  */
 public class InputHandler implements KeyListener{
 
-    public static final int MOVE_UP_KEY = VK_UP;
-    public static final int MOVE_DOWN_KEY = VK_DOWN;
-    public static final int SHOOT_KEY = VK_SPACE;
-    public static final int SWITCH_STATE_KEY = VK_SHIFT;
+    private static final int MOVE_UP_KEY = VK_UP;
+    private static final int MOVE_DOWN_KEY = VK_DOWN;
+    private static final int SHOOT_KEY = VK_SPACE;
+    private static final int SWITCH_STATE_KEY = VK_SHIFT;
     
-    CannonCommand moveUpCommand;
-    CannonCommand moveDownCommand;
-    CannonCommand shootCommand;
-    CannonCommand switchCannonStateCommand;
+    private final CannonCommand moveUpCommand;
+    private final CannonCommand moveDownCommand;
+    private final CannonCommand shootCommand;
+    private final CannonCommand switchCannonStateCommand;
+    private final CannonCommand stopCommand;
             
     
-    Model model;
-    private final StopCommand stopCommand;
+    private Model model;
     
     public InputHandler(Model model){
         this.model = model;
@@ -46,7 +46,6 @@ public class InputHandler implements KeyListener{
         stopCommand = new StopCommand(cannon);
         shootCommand = new ShootCommand(cannon);
         switchCannonStateCommand = new SwitchCannonStateCommand(cannon);
-        
     }
     
 
@@ -72,5 +71,4 @@ public class InputHandler implements KeyListener{
     public void keyTyped(KeyEvent ke) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-   
 }

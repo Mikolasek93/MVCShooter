@@ -12,6 +12,7 @@ public class Cannon extends GameObject {
 
     private static final int initialXPosition = 20;
     private static final int initialYPosition = Model.MAP_HEIGHT / 2;
+    private static final int stepSize = 10;
 
     public Cannon() {
         x = initialXPosition;
@@ -22,15 +23,17 @@ public class Cannon extends GameObject {
         switch (moveState) {
             case MOVING_DOWN:
                 if (y < (Model.MAP_HEIGHT - height)) {
-                    y++;
+                    y+=stepSize;
                 }
                 break;
             case MOVING_UP:
                 if (y > height) {
-                    y--;
+                    y-=stepSize;
                 }
                 break;
         }
+        setChanged();
+        notifyObservers();
         System.out.println("Cannon Y position : " + y);
     }
 

@@ -16,7 +16,6 @@ public class Shooter {
             public void run() {
                MainWindow testWindow = new MainWindow();
                 testWindow.setVisible(true);
-                
                 testWindow.repaint();
             }
         });

@@ -1,5 +1,6 @@
 package cz.fit.adp.mvcshooter.view;
 
+import cz.fit.adp.mvcshooter.model.Model;
 import cz.fit.adp.mvcshooter.model.gameobjects.Cannon;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -35,10 +36,11 @@ public class GraphicsDrawer {
         
     
     public void drawCannon(Graphics g, Cannon cannon) {
+        
+        
         g.drawImage(cannonImage, 
               cannon.getX() - cannonImage.getWidth()/2, 
-              cannon.getY() - cannonImage.getHeight()/2, null);
-         
+              (int)((double)cannon.getY()/Model.MAP_HEIGHT*MainWindow.SCREEN_HEIGHT) - cannonImage.getHeight()/2, null);
         
     }
     

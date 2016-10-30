@@ -4,8 +4,6 @@ import cz.fit.adp.mvcshooter.controller.InputHandler;
 import cz.fit.adp.mvcshooter.model.Model;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -14,30 +12,31 @@ import javax.swing.JOptionPane;
  * @author Ondrej Stuchlik
  */
 public class MainWindow extends JFrame {
-
+    public static final int SCREEN_WIDTH = 500;
+    public static final int SCREEN_HEIGHT = 500;
+    public static final String WINDOW_TITLE = "MVC Shooter - mikolmic@fit.cvut.cz";
+    
+    private Model model;
+    private Canvas view;
 
     public MainWindow() {
-        Model model = new Model();
-        
+        model = new Model();
         try {
-            Canvas view = new Canvas(0, 0, 500, 500, model.getCannon());
+            view = new Canvas(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, model.getCannon());
+            model.getCannon().addObserver(view);
 
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            this.setTitle("MyShooter");
+            this.setTitle(WINDOW_TITLE);
             this.setResizable(false);
 
-            Dimension obrazovka = Toolkit.getDefaultToolkit().getScreenSize();
+            Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
             this.setLocation(
-                  (int) (obrazovka.getWidth() / 2 - 250),
-                  (int) (obrazovka.getHeight() / 2 - 250));
+                  (int) (screen.getWidth() / 2 - 250),
+                  (int) (screen.getHeight() / 2 - 250));
 
             this.addKeyListener(new InputHandler(model));
-
             this.add(view);
             this.pack();
-            
-            
-            
         } catch (Exception ex) {
             ex.printStackTrace(System.err);
         }

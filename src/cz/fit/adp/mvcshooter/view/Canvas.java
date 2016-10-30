@@ -4,13 +4,15 @@ import cz.fit.adp.mvcshooter.model.gameobjects.Cannon;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.util.Observable;
+import java.util.Observer;
 import javax.swing.JPanel;
 
 /**
  *
  * @author Ondrej Stuchlik
  */
-public class Canvas extends JPanel { 
+public class Canvas extends JPanel implements Observer { 
     GraphicsDrawer drawer = new GraphicsDrawer();
 
     Cannon cannon;
@@ -24,15 +26,15 @@ public class Canvas extends JPanel {
     this.cannon = cannon;        
     }
     
-    public void thisIsHowYouForceGuiToRepaint() {        
-        repaint();
-    }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);    
         drawer.drawCannon(g, cannon);
-        System.out.println("Y : " + cannon.getY());
     }
-    
+
+    @Override
+    public void update(Observable o, Object o1) {
+        repaint();
+    }
 }
