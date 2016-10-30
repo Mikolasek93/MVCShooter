@@ -29,7 +29,6 @@ public class GraphicsDrawer {
             missileImage = ImageIO.read(getClass().getResourceAsStream("/resources/images/missile.png"));
             collisionImage = ImageIO.read(getClass().getResourceAsStream("/resources/images/collision.png"));
         } catch (IOException ex) {
-            System.out.println("chyba");
             ex.printStackTrace(System.err);
         }
     }
@@ -39,6 +38,8 @@ public class GraphicsDrawer {
         g.drawImage(cannonImage, 
               cannon.getX() - cannonImage.getWidth()/2, 
               cannon.getY() - cannonImage.getHeight()/2, null);
+         
+        
     }
     
     public void drawMissile(Graphics g, Missile missile) {
