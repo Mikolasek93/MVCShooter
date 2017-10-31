@@ -5,21 +5,17 @@
  */
 package cz.fit.adp.mvcshooter.controller.command;
 
-import cz.fit.adp.mvcshooter.model.gameobjects.Cannon;
+import cz.fit.adp.mvcshooter.model.Model;
 
 /**
  *
  * @author Mikolasek
  */
-public class DecreaseAngleCommand extends CannonCommand {
-
-    public DecreaseAngleCommand(Cannon cannon) {
-        super(cannon);
-    }
+public class DecreaseAngleCommand extends Command {
 
     @Override
-    public void execute() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void execute(Model model) {
+        model.getCannon().decreaseAngle();
     }
     
 }

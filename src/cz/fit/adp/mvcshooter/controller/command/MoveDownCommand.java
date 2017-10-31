@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package cz.fit.adp.mvcshooter.controller.command;
+import cz.fit.adp.mvcshooter.model.Model;
 import cz.fit.adp.mvcshooter.model.gameobjects.Cannon;
 import cz.fit.adp.mvcshooter.model.gameobjects.MoveState;
 
@@ -11,15 +12,11 @@ import cz.fit.adp.mvcshooter.model.gameobjects.MoveState;
  *
  * @author Mikolasek
  */
-public class MoveDownCommand extends CannonCommand {
-
-    public MoveDownCommand(Cannon cannon) {
-        super(cannon);
-    }
+public class MoveDownCommand extends Command {
 
     @Override
-    public void execute() {
-        cannon.setMoveState(MoveState.MOVING_DOWN);
+    public void execute(Model model) {
+        model.getCannon().setMoveState(MoveState.MOVING_DOWN);
     }
 
 }

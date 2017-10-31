@@ -1,6 +1,7 @@
 package cz.fit.adp.mvcshooter.view;
 
-import cz.fit.adp.mvcshooter.model.gameobjects.Cannon;
+import cz.fit.adp.mvcshooter.model.Model;
+import cz.fit.adp.mvcshooter.model.gameobjects.GameObject;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -10,27 +11,32 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Ondrej Stuchlik
+ * @author Michal Mikolasek
  */
 public class Canvas extends JPanel implements Observer { 
     GraphicsDrawer drawer = new GraphicsDrawer();
-
-    Cannon cannon;
+    Model model;
     
-    public Canvas(int x, int y, int width, int height, Cannon cannon) {
+    public Canvas(int x, int y, int width, int height, Model model) {
         this.setBackground(Color.WHITE);
         this.setDoubleBuffered(true);
         this.setLocation(x, y);
         this.setPreferredSize(new Dimension(width,height));
         this.setVisible(true);
-    this.cannon = cannon;        
+        this.model = model;
+        model.addObserver(this);
     }
     
 
     @Override
     protected void paintComponent(Graphics g) {
-        super.paintComponent(g);    
-        drawer.drawCannon(g, cannon);
+        super.paintComponent(g);
+        drawer.setGraphics(g);
+        
+        for (GameObject gameObject : model.getAllGameObjects()){
+            gameObject.accept(drawer);
+        }
+        g.drawString(model.infoPanelString(),10,10);
     }
 
     @Override

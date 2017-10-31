@@ -5,22 +5,19 @@
  */
 package cz.fit.adp.mvcshooter.controller.command;
 
-import cz.fit.adp.mvcshooter.controller.command.CannonCommand;
+import cz.fit.adp.mvcshooter.controller.command.Command;
+import cz.fit.adp.mvcshooter.model.Model;
 import cz.fit.adp.mvcshooter.model.gameobjects.Cannon;
 
 /**
  *
  * @author Mikolasek
  */
-public class SwitchCannonStateCommand extends CannonCommand {
-
-    public SwitchCannonStateCommand(Cannon cannon) {
-        super(cannon);
-    }
+public class SwitchCannonStateCommand extends Command {
 
     @Override
-    public void execute() {
-        cannon.switchShootingState();
+    public void execute(Model model) {
+        model.getCannon().switchShootingState();
     }
     
 }

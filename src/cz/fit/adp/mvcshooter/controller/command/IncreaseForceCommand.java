@@ -5,6 +5,7 @@
  */
 package cz.fit.adp.mvcshooter.controller.command;
 
+import cz.fit.adp.mvcshooter.model.Model;
 import cz.fit.adp.mvcshooter.model.gameobjects.Cannon;
 
 /**
@@ -12,15 +13,11 @@ import cz.fit.adp.mvcshooter.model.gameobjects.Cannon;
  * @author Mikolasek
  */
 
-public class IncreaseForceCommand extends CannonCommand {
-
-    public IncreaseForceCommand(Cannon cannon) {
-        super(cannon);
-    }
+public class IncreaseForceCommand extends Command {
 
     @Override
-    public void execute() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void execute(Model model) {
+        model.getCannon().increaseForce();
     }
     
 }

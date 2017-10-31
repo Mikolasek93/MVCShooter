@@ -5,7 +5,8 @@
  */
 package cz.fit.adp.mvcshooter.controller.command;
 
-import cz.fit.adp.mvcshooter.controller.command.CannonCommand;
+import cz.fit.adp.mvcshooter.controller.command.Command;
+import cz.fit.adp.mvcshooter.model.Model;
 import cz.fit.adp.mvcshooter.model.gameobjects.Cannon;
 import cz.fit.adp.mvcshooter.model.gameobjects.MoveState;
 
@@ -13,14 +14,10 @@ import cz.fit.adp.mvcshooter.model.gameobjects.MoveState;
  *
  * @author Mikolasek
  */
-public class StopCommand extends CannonCommand{
-
-    public StopCommand(Cannon cannon) {
-        super(cannon);
-    }
+public class StopCommand extends Command{
 
     @Override
-    public void execute() {
-        cannon.setMoveState(MoveState.STOPPED);
+    public void execute(Model model) {
+        model.getCannon().setMoveState(MoveState.STOPPED);
     }
 }

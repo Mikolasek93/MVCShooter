@@ -9,21 +9,20 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Ondrej Stuchlik
+ * @author 
  */
 public class MainWindow extends JFrame {
-    public static final int SCREEN_WIDTH = 500;
-    public static final int SCREEN_HEIGHT = 500;
+    public static final int SCREEN_WIDTH = 700;
+    public static final int SCREEN_HEIGHT = 700;
     public static final String WINDOW_TITLE = "MVC Shooter - mikolmic@fit.cvut.cz";
     
     private Model model;
     private Canvas view;
 
-    public MainWindow() {
-        model = new Model();
+    public MainWindow(Model model) {
         try {
-            view = new Canvas(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, model.getCannon());
-            model.getCannon().addObserver(view);
+            view = new Canvas(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, model);
+            //model.getCannon().addObserver(view);
 
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             this.setTitle(WINDOW_TITLE);
@@ -34,7 +33,6 @@ public class MainWindow extends JFrame {
                   (int) (screen.getWidth() / 2 - 250),
                   (int) (screen.getHeight() / 2 - 250));
 
-            this.addKeyListener(new InputHandler(model));
             this.add(view);
             this.pack();
         } catch (Exception ex) {

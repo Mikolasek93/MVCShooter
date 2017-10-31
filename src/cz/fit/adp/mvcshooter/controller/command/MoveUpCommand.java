@@ -5,7 +5,8 @@
  */
 package cz.fit.adp.mvcshooter.controller.command;
 
-import cz.fit.adp.mvcshooter.controller.command.CannonCommand;
+import cz.fit.adp.mvcshooter.controller.command.Command;
+import cz.fit.adp.mvcshooter.model.Model;
 import cz.fit.adp.mvcshooter.model.gameobjects.Cannon;
 import cz.fit.adp.mvcshooter.model.gameobjects.MoveState;
 
@@ -13,15 +14,11 @@ import cz.fit.adp.mvcshooter.model.gameobjects.MoveState;
  *
  * @author Mikolasek
  */
-public class MoveUpCommand extends CannonCommand {
-
-    public MoveUpCommand(Cannon cannon) {
-        super(cannon);
-    }
+public class MoveUpCommand extends Command {
 
     @Override
-    public void execute() {
-        cannon.setMoveState(MoveState.MOVING_UP);
+    public void execute(Model model) {
+        model.getCannon().setMoveState(MoveState.MOVING_UP);
     }
 
 }
